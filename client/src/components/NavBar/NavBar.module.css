@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.Navegation {
+    height: 90px;
+    background: url("C:\Users\usuario\Desktop\Proyectos\PI_Pokemon\PI-Pokemon-main\client\src\images\fondo-navbar.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Navegation img {
+    width: 16%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30% 30% 0 0;
+}
+
+.Navegation p {
+    width: 200px;
+    height: 20px;
+    padding: 6px 10px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    box-shadow: -8px 9px 14px -3px rgba(0,0,0,0.75);
+    color:var(--text-color);
+    font-size: var(--h3-font);
+
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+    transition: all 0.2s;
+
+    text-decoration-line:none;
+    font-family: 'Roboto Mono', monospace;
+
+}
+
+.Navegation p:hover {
+    background-color: var(--other-color); 
+}
+

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.Landing {
+    padding: 10px 90px;
+    height: 100vh;
+    width: 87%;
+    position: absolute;
+    text-shadow: 0 0 300px rgb(131, 124, 124);
+    background-image: url(C:\Users\usuario\Desktop\Proyectos\PI_Pokemon\PI-Pokemon-main\client\src\images\fondo-landing.gif);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.Landing h1 {
+    font-weight: bold;
+    font-size: var(--h1-font);
+    font-family: 'Roboto Mono', monospace;
+    color: #FFDE00;
+    text-shadow: 0 4px #3B4CCA, 0 -2px  #B3A125;
+
+}
+
+.Landing div {
+    align-content: space-between;
+    margin: 20px;
+
+}
+
+.Landing p {
+    font-size: var(--h2-font);
+    padding: 10px 23px;
+    text-align: center;
+    text-decoration-line: none;
+    font-weight:bolder;
+
+    text-shadow: 0 4px #c252d1;
+    background: linear-gradient(270deg, #FF0000,  #CC0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+

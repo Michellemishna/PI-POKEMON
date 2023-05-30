@@ -1,0 +1,8 @@
+.home{
+    background: url("C:\Users\usuario\Desktop\Proyectos\PI_Pokemon\PI-Pokemon-main\client\src\images\fondo-home.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100;
+    height: 100;
+
+}
