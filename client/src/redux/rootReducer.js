@@ -65,11 +65,12 @@ const rootReducer = (state = initialState,action) =>{
             return{
                 ...state,
                 pokemons: createFilter || pokemonApi,
+                filterInfo: (action.payload === "AllPokemons")? [] : [action.payload],
                 errors:{}
             }
 
         case ORDER_POKEMONS: 
-            const pokemons = state.pokemons.slice();     
+            const pokemons = state.pokemons;     
             const Sort = (action.payload === 'Descendente'? pokemons.sort((a,b) => {    
                     if (a.name < b.name) return 1;
                     if (a.name > b.name) return -1;  

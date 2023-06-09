@@ -42,7 +42,7 @@ const CardsContainer = () => {
     history.replace('/home')
   };
 
-  const showAllPPokemons = () => {
+  const showAllPokemons = () => {
     dispatch(cleanInfoFilters())
     dispatch(getAllPokemons())
   }
@@ -50,12 +50,14 @@ const CardsContainer = () => {
     <div>
       <div className={style.contentFilters} >
       <select className={style.filters} onChange={handleSort}>
+      <option value="All" hidden>Orden</option>
         <option value="Ascendente">A-Z</option>
         <option value="Descendente">Z-A</option>
       </select>
 
       <select className={style.filters} onChange={handleFiltersTypes}>
         <option value="All" hidden>Types</option>
+        <option value="All" >All</option>
           {types.map((type) => (
           <option key={type.id} value={type.name}>
             {type.name}
@@ -64,16 +66,18 @@ const CardsContainer = () => {
       </select>
 
       <select className={style.filters} onChange={handleFilters}>
+      <option value="All" hidden>Storage</option>
+      <option value= "AllPokemons">All Pokemons</option>
         <option value="Stored Pokemon">Exist</option>
         <option value="Created Pokemon">Create</option>
       </select>
-      <button className={style.filters} onClick={()=>showAllPPokemons()}>Mostrar todos los Pokemons</button>
+      <button className={style.filters} onClick={()=>showAllPokemons()}>Show all Pokemons</button>
       </div>
       <Paginado className={style.Paginado}
         viewPage={viewPage} pokemons={pokemons.length} paginado={paginado} page={page} />
      <br />
       <div className={style.ContCards}>
-        {viewPokemons.map((pokemon) => {
+        {viewPokemons.length !== 0 ? viewPokemons.map((pokemon) => {
           return (
             <Card
               key={pokemon.id}
@@ -82,7 +86,12 @@ const CardsContainer = () => {
               image={pokemon.image}
               types={pokemon.types}
             />);
-        })}
+        }): (viewPokemons.length === 0 && handleFilters.event === 0 ) ?
+        <div><h2>There are no video games with those filters applied.</h2></div>:
+        <div>
+        <h2>Loading...</h2>
+        <img  src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" alt="gif"/></div> 
+               }
         <br />
       </div>
       <Paginado viewPage={viewPage} pokemons={pokemons.length} paginado={paginado} page={page}/>
