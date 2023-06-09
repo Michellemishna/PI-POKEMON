@@ -15,7 +15,8 @@
     padding: 1px 53px;
     border: none;  
     margin-left: 10px; 
-    margin-right: 10px;    
+    margin-right: 10px;  
+    cursor: pointer;  
 }
 
 .filters{

@@ -7,6 +7,9 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
+import axios from 'axios';
+axios.defaults.baseURL=`http://localhost:3001/`; 
+
 ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
