@@ -6,7 +6,7 @@
     width: 87%;
     position: absolute;
     text-shadow: 0 0 300px rgb(131, 124, 124);
-    background-image: url(C:\Users\usuario\Desktop\Proyectos\PI_Pokemon\PI-Pokemon-main\client\src\images\fondo-landing.gif);
+    background-image: url("https://giffiles.alphacoders.com/213/213784.gif");
     background-size: cover;
     background-position: center;
     display: flex;

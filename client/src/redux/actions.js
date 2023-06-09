@@ -22,7 +22,6 @@ export const getAllPokemons = () => {
       });
     } catch (error) {
       return dispatch({
-        type: "ERROR",
         payload: error,
       });
     }
@@ -56,7 +55,6 @@ export const getTypes = () => {
       });
     } catch (error) {
       return dispatch({
-        type: "ERROR",
         payload: error,
       });
     }
@@ -74,7 +72,6 @@ export const getByNamePokemon = (name) => {
       });
     } catch (error) {
       return dispatch({
-        type: "ERROR",
         payload: error,
       });
     }
