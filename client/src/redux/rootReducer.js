@@ -36,7 +36,7 @@ const rootReducer = (state = initialState,action) =>{
         case CLEAN_DETAIL: return{
             ...state, 
             pokemonDetails: '',
-            errors:{},
+            
         }
         case FILTER_TYPES: 
             const allPokemons = state.allPokemons;
@@ -54,20 +54,17 @@ const rootReducer = (state = initialState,action) =>{
             return {
                 ...state, 
                 pokemons: typeFilter,
-                errors:{}
               }
 
         case FILTER_POKEMONS: 
             const pokemonApi = state.allPokemons;
-            const createFilter =(action.payload === "Stored Pokemon")? pokemonApi.filter((pokemon) => pokemon.createinDb === false) :
-             (action.payload === "Created Pokemon") ? pokemonApi.filter((pokemon) => pokemon.createinDb === true)
+            const createFilter =(action.payload === "Stored")? pokemonApi.filter((pokemon) => pokemon.createInDb === false) :
+             (action.payload === "Created") ? pokemonApi.filter((pokemon) => pokemon.createInDb === true)
              : pokemonApi
             return{
                 ...state,
                 pokemons: createFilter || pokemonApi,
-                filterInfo: (action.payload === "AllPokemons")? [] : [action.payload],
-                errors:{}
-            }
+                filterInfo: (action.payload === "AllPokemons")? [] : [action.payload]            }
 
         case ORDER_POKEMONS: 
             const pokemons = state.pokemons;     
@@ -82,8 +79,7 @@ const rootReducer = (state = initialState,action) =>{
                 }) : pokemons)
             return{
             ...state,
-            pokemons: Sort,
-            errors:{}
+            pokemons: Sort
             }
             case "ERROR":
     return{

@@ -22,6 +22,7 @@ export const getAllPokemons = () => {
       });
     } catch (error) {
       return dispatch({
+        type: "ERROR",
         payload: error,
       });
     }
@@ -55,6 +56,7 @@ export const getTypes = () => {
       });
     } catch (error) {
       return dispatch({
+        type: "ERROR",
         payload: error,
       });
     }
@@ -71,9 +73,9 @@ export const getByNamePokemon = (name) => {
         payload: response.data,
       });
     } catch (error) {
-      return dispatch({
-        payload: error,
-      });
+      { alert("Sorry, this pokemon doesn't exist")
+
+      };
     }
   };
 };
@@ -82,7 +84,9 @@ export const createPokemon = (form) => {
   return function () {
     axios
       .post(`/pokemons/`, form)
-      
+      .then((response) => {
+        alert("The pokemon be created."
+      )})
       .catch((error) =>
         alert(
           "The pokemon could not be created: it doesn't have the validation requirements."

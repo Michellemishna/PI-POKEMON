@@ -6,6 +6,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     font-family: 'Roboto Mono', monospace;
+
 }
 
 .contentFilters {
@@ -16,7 +17,15 @@
     border: none;  
     margin-left: 10px; 
     margin-right: 10px;  
-    cursor: pointer;  
+}
+
+.contentFilters img {
+    width: 120px;
+    border-radius: 30% 30% 0 0;
+    justify-content: space-between;
+    margin-right: 40px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
 }
 
 .filters{
@@ -24,6 +33,7 @@
     background-color: var(--other-color);
     flex-direction: row;
     padding: 8px 13px;
+    cursor: pointer;  
 
     border-radius: 0px 30px 30px 30px;
     box-shadow: 3px 3px 10px black; 
@@ -31,5 +41,12 @@
     margin-right: 10px;
     margin-top: 10px;
     font-family: 'Roboto Mono', monospace;
+    transition: all 0.2s;
+
 }
+
+
+.filters:hover {
+    transform: scale(1.03);
+  }
 

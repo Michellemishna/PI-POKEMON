@@ -1,21 +1,27 @@
 .Pages {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content:center;
+    font-size: 13px;
    
 }
 
 .Pages button {
     font-family: 'Roboto Mono', monospace;
     background-color: var(--second-color);
-
+    cursor: pointer;
+    width: 42px;
+    height: 32px;
+    border-radius: 10px;
 
 
 }
 
 .Pages button:hover {
-    background: var(--bg-color);
+    background: rgb(9, 71, 45);
     color: var(--text-color);
     transform: translateY(2px);
     font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
 }

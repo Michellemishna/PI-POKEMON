@@ -27,13 +27,11 @@ const CardsContainer = () => {
   const handleFiltersTypes = (event) => {
     dispatch(filterTypesPokemons(event.target.value));
     setPage(1);
-    history.replace('/home')
   };
 
   const handleFilters = (event) => {
     dispatch(filterPokemons(event.target.value));
     setPage(1);
-    history.replace('/home')
   };
 
   const handleSort = (event) => {
@@ -49,6 +47,8 @@ const CardsContainer = () => {
   return (
     <div>
       <div className={style.contentFilters} >
+      <img alt="img" src="https://25.media.tumblr.com/a1e87d2030a73aee16661e8807da6c1d/tumblr_mkhnmmFwaA1rxvkeso1_500.gif"/>
+
       <select className={style.filters} onChange={handleSort}>
       <option value="All" hidden>Orden</option>
         <option value="Ascendente">A-Z</option>
@@ -68,8 +68,8 @@ const CardsContainer = () => {
       <select className={style.filters} onChange={handleFilters}>
       <option value="All" hidden>Storage</option>
       <option value= "AllPokemons">All Pokemons</option>
-        <option value="Stored Pokemon">Exist</option>
-        <option value="Created Pokemon">Create</option>
+        <option value="Stored">Exist</option>
+        <option value="Created">Create</option>
       </select>
       <button className={style.filters} onClick={()=>showAllPokemons()}>Show all Pokemons</button>
       </div>

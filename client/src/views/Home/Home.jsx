@@ -14,6 +14,7 @@ const Home = () => {
 
   return (
     <div className={style.home}>
+      
       <CardsContainer/>
         </div>
   );

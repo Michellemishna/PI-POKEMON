@@ -13,12 +13,12 @@ code {
 }
 
 :root{
-  --bg-color: #46467e;
-  --bg-color2: #2ce0688c;
+  --bg-color: #2e2e8b;
+  --bg-color2: #45af6873;
   --text-color: #fff;
   --main-color: #5360b4;
   --second-color: #cf5c62;
-  --other-color: #e7adc6;
+  --other-color: #f595be;
   --h1-font: 3rem;
   --h2-font: 2rem;
   --h3-font: 1.2rem;

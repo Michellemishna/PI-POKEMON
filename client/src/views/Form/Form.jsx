@@ -55,7 +55,7 @@ const Form = () => {
         setForm({ ...form, typeTwo: event.target.value })
     }
     const handleSubmit = (event) => {
-        event.preventDefault();
+       event.preventDefault();
         dispatch(createPokemon(form));
 
     }
@@ -95,6 +95,7 @@ const Form = () => {
                 <div>
                 <label htmlFor="types">Type One:</label>
                 <select onChange={handleTypeOne} name='types' >
+                <option value="All" >Select</option>
                  { types.map((type) => {
                         return (
                             <option key={type.id} value={type.name} > {type.name} </option>
@@ -106,6 +107,7 @@ const Form = () => {
             <div>
                 <label> Type Two: </label>
                 <select onChange={handleTypeTwo} name='types' >
+                <option value="All" >Select</option>
                      { types.map((type) => {
                         return (
                             <option key={type.id} value={type.name} > {type.name} </option>
