@@ -8,7 +8,7 @@ const getPokemons = async (req, res) => {
     const response = name ? await findByName(name) : await findAllPokemons();
     res.status(200).json(response);
   } catch (error) {
-    res.status(500).send({ "error": error.message });
+    res.status(500).json({ "error": error.message });
   }
 };
 

@@ -14,7 +14,7 @@ const findAllPokemons = async () => {
   const pokemonsDB = pokemonsAllDB.map((pokemon) => ({...pokemon.toJSON(), 
     types: pokemon.types.map((type) => type.name).flat().sort().join(', ')}))
 
-  const apiUrl = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=150`)
+  const apiUrl = (await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=150`))
   const response = apiUrl.data.results?.map(e=>axios.get(e.url))
 
   const responseAPI = await axios.all(response)

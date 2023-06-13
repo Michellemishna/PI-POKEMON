@@ -8,7 +8,7 @@ import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
 import axios from 'axios';
-axios.defaults.baseURL=`https://pi-pokemons-back.onrender.com/`; 
+ axios.defaults.baseURL=`https://pi-pokemons-back.onrender.com/`; 
 
 ReactDOM.render(
     <Provider store={store}>
