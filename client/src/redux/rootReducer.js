@@ -16,7 +16,6 @@ const rootReducer = (state = initialState,action) =>{
         ...state,
         pokemons: action.payload,
         allPokemons: action.payload,
-        errors:{},
         }
         case GET_DETAIL_POKEMON: return{
             ...state,
@@ -67,7 +66,7 @@ const rootReducer = (state = initialState,action) =>{
                 filterInfo: (action.payload === "AllPokemons")? [] : [action.payload]            }
 
         case ORDER_POKEMONS: 
-            const pokemons = state.pokemons;     
+            const pokemons = state.pokemons.slice();     
             const Sort = (action.payload === 'Descendente'? pokemons.sort((a,b) => {    
                     if (a.name < b.name) return 1;
                     if (a.name > b.name) return -1;  

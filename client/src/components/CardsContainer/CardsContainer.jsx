@@ -27,11 +27,13 @@ const CardsContainer = () => {
   const handleFiltersTypes = (event) => {
     dispatch(filterTypesPokemons(event.target.value));
     setPage(1);
+    history.replace('/home')
   };
 
   const handleFilters = (event) => {
     dispatch(filterPokemons(event.target.value));
     setPage(1);
+    history.replace('/home')
   };
 
   const handleSort = (event) => {
@@ -60,7 +62,7 @@ const CardsContainer = () => {
         <option value="All" >All</option>
           {types.map((type) => (
           <option key={type.id} value={type.name}>
-            {type.name}
+            {type.name.charAt(0).toUpperCase()+ type.name.substring(1)}
           </option>
         ))}  
       </select>
@@ -77,7 +79,7 @@ const CardsContainer = () => {
         viewPage={viewPage} pokemons={pokemons.length} paginado={paginado} page={page} />
      <br />
       <div className={style.ContCards}>
-        {viewPokemons.length !== 0 ? viewPokemons.map((pokemon) => {
+        {viewPokemons.map((pokemon) => {
           return (
             <Card
               key={pokemon.id}
@@ -86,12 +88,7 @@ const CardsContainer = () => {
               image={pokemon.image}
               types={pokemon.types}
             />);
-        }): (viewPokemons.length === 0 && handleFilters.event === 0 ) ?
-        <div><h2>There are no video games with those filters applied.</h2></div>:
-        <div>
-        <h2>Loading...</h2>
-        <img  src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" alt="gif"/></div> 
-               }
+        })  }
         <br />
       </div>
       <Paginado viewPage={viewPage} pokemons={pokemons.length} paginado={paginado} page={page}/>

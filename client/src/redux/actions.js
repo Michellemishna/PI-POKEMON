@@ -13,17 +13,16 @@ import {
   } from "./typeActions";
 
 export const getAllPokemons = () => {
-  return async function (dispatch) {
+  return async function(dispatch) {
     try {
-      const response = await axios.get(`/pokemons`);
+      const response = await axios.get(`/pokemons`)
       return dispatch({
         type: GET_ALL_POKEMONS,
-        payload: response.data,
-      });
+        payload: response.data
+      })
     } catch (error) {
-      return dispatch({
-        type: "ERROR",
-        payload: error,
+      return ({
+        payload:error,
       });
     }
   };
