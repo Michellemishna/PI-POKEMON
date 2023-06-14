@@ -79,20 +79,13 @@ export const getByNamePokemon = (name) => {
   };
 };
 
-export const createPokemon = (form) => {
+export const createPokemon = (pokemon) => {
   return function () {
-    axios
-      .post(`/pokemons/`, form)
-      .then((response) => {
-        alert("The pokemon be created."
-      )})
-      .catch((error) =>
-        alert(
-          "The pokemon could not be created: it doesn't have the validation requirements."
-        )
-      );
-  };
-};
+     axios.post('/pokemons', pokemon)
+      .catch ((error)=>  alert(
+        "The game could not be created: it doesn't meet the validation requirements."
+      ))}}
+
 export const cleanDetailPokemon = () => {
   return { type: CLEAN_DETAIL };};
 

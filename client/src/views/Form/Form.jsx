@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux"
 import validation from "./validation";
 import { createPokemon, getTypes } from "../../redux/actions";
 import style from "./Form.module.css";
+import axios from "axios";
 
 const Form = () => {
     const dispatch = useDispatch();
     const types = useSelector(state => state.types)
+    const allPokemons = useSelector(state => state.pokemons)
 
     useEffect(() => {
         dispatch(getTypes())
@@ -27,23 +29,23 @@ const Form = () => {
 
         })
     const [errors,setErrors] = useState({
-        name: "Agrerar información",
-        image: "Agrerar información",
-        hp: "Agrerar información",
-        attack: "Agrerar información",
-        defense: "Agrerar información",
-        speed: "Agrerar información",
-        height: "Agrerar información",
-        weight: "Agrerar información",
-        typeOne: "Agrerar información",
-        typeTwo: "Agrerar información",
+        name: "",
+        image: "",
+        hp: "",
+        attack: "",
+        defense: "",
+        speed: "",
+        height: "",
+        weight: "",
+        typeOne: "",
+        typeTwo: "",
     })
 
     const handleChange = (event) => {
         const prop = event.target.name;
         const value = event.target.value;
 
-        setErrors(validation({...form, [prop]: value}))
+        setErrors(validation({...form, [prop]: value},allPokemons))
         setForm({...form, [prop]: value})
     }
 
@@ -56,8 +58,7 @@ const Form = () => {
     }
     const handleSubmit = (event) => {
        event.preventDefault();
-        dispatch(createPokemon(form));
-
+       dispatch(createPokemon(form))
     }
 
     return(
@@ -115,8 +116,8 @@ const Form = () => {
                     })} 
                 </select>
                 <br />
-                    {errors.flag === true? <button >Create Pokemon</button> : <button type="submit">Create Pokemon</button>}   
-
+                    {errors.flag === true? <button disabled>Create Pokemon</button> : <button type="submit">Create Pokemon</button>}   
+                    
                     </div>
                 </form>
                 </div>
@@ -135,7 +136,6 @@ const Form = () => {
     <li className={errors.speed? style.errorSpeed: style.validSpeed}>Speed: {errors.speed? errors.speed : "Información correcta."}</li>
     <li className={errors.weight? style.errorWeight: style.validWeight}>Weight: {errors.weight? errors.weight : "Información correcta."}</li>
     <li className={errors.height? style.errorHeight: style.validHeight}>Height: {errors.height? errors.height : "Información correcta."}</li>
-    <li className={errors.typeOne? style.errorTypes: style.validTypes}>Types: {errors.typeOne? errors.typeOne : "Información correcta."}</li>
 </ul>
 </div>
 
